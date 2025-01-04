@@ -1,23 +1,23 @@
 ```markdown
-# CRUD API com Flask
+# CRUD API with Flask
 
-Este projeto é uma API simples construída com Flask para gerenciar refeições fictícias (meals). Ele implementa as operações CRUD (Create, Read, Update, Delete), permitindo listar, visualizar, atualizar e deletar refeições de uma lista simulada.
+This project is a simple API built with Flask to manage fictional meals. It implements CRUD operations (Create, Read, Update, Delete), allowing you to list, view, update, and delete meals from a simulated dataset.
 
-## Requisitos
+## Requirements
 
-Antes de executar o projeto, certifique-se de ter instalado:
+Before running the project, ensure you have installed:
 - **Python 3.x**  
-- **Flask**: Instale-o com o comando:
+- **Flask**: Install it with the following command:
   ```bash
   pip install flask
   ```
 
-## Endpoints da API
+## API Endpoints
 
-### 1. Obter todas as refeições
+### 1. Retrieve All Meals
 - **Endpoint:** `GET /meals`  
-- **Descrição:** Retorna uma lista com todas as refeições cadastradas.  
-- **Exemplo de Resposta:**
+- **Description:** Returns a list of all registered meals.  
+- **Example Response:**
   ```json
   [
     {
@@ -38,10 +38,10 @@ Antes de executar o projeto, certifique-se de ter instalado:
   ]
   ```
 
-### 2. Obter uma única refeição
+### 2. Retrieve a Single Meal
 - **Endpoint:** `GET /meals/<id>`  
-- **Descrição:** Retorna uma refeição específica com base no seu `id`.  
-- **Exemplo de Resposta:**
+- **Description:** Returns a specific meal based on its `id`.  
+- **Example Response:**
   ```json
   {
     "id": 1,
@@ -50,17 +50,17 @@ Antes de executar o projeto, certifique-se de ter instalado:
   }
   ```
 
-### 3. Atualizar uma refeição
+### 3. Update a Meal
 - **Endpoint:** `PUT /meals/<id>`  
-- **Descrição:** Atualiza os dados de uma refeição específica com base no `id`.  
-- **Payload de Exemplo:**
+- **Description:** Updates the data of a specific meal based on its `id`.  
+- **Example Payload:**
   ```json
   {
     "name": "Updated Meal",
     "franchise": "Updated Franchise"
   }
   ```
-- **Exemplo de Resposta:**
+- **Example Response:**
   ```json
   {
     "id": 1,
@@ -69,10 +69,10 @@ Antes de executar o projeto, certifique-se de ter instalado:
   }
   ```
 
-### 4. Deletar uma refeição
+### 4. Delete a Meal
 - **Endpoint:** `DELETE /meals/<id>`  
-- **Descrição:** Remove uma refeição específica da lista com base no `id`.  
-- **Exemplo de Resposta:** Retorna a lista atualizada de refeições:
+- **Description:** Removes a specific meal from the list based on its `id`.  
+- **Example Response:** Returns the updated list of meals:
   ```json
   [
     {
@@ -88,46 +88,47 @@ Antes de executar o projeto, certifique-se de ter instalado:
   ]
   ```
 
-## Como Executar
+## How to Run
 
-1. Salve o código em um arquivo chamado `app.py`.  
-2. Abra o terminal e navegue até o diretório onde o arquivo foi salvo.  
-3. Execute o comando:  
+1. Save the code in a file named `app.py`.  
+2. Open the terminal and navigate to the directory where the file is saved.  
+3. Run the command:  
    ```bash
    python app.py
    ```
-4. A API estará disponível em `http://localhost:5000`.
+4. The API will be available at `http://localhost:5000`.
 
-## Testando a API
+## Testing the API
 
-Você pode testar os endpoints utilizando ferramentas como:  
+You can test the endpoints using tools such as:  
 - **Postman**  
-- **cURL** no terminal  
-- Extensões de navegador como **Rest Client**  
-- Scripts em linguagens como Python ou JavaScript.  
+- **cURL** in the terminal  
+- Browser extensions like **Rest Client**  
+- Scripts in programming languages like Python or JavaScript.  
 
-## Estrutura do Código
+## Code Structure
 
-- **`meals`**: Lista simulada que funciona como um banco de dados para as refeições.  
-- **Endpoints CRUD:**  
-  - `GET /meals`: Obtem todas as refeições.  
-  - `GET /meals/<id>`: Obtem uma refeição específica.  
-  - `PUT /meals/<id>`: Atualiza os dados de uma refeição.  
-  - `DELETE /meals/<id>`: Remove uma refeição.  
+- **`meals`**: A simulated list acting as a database for meals.  
+- **CRUD Endpoints:**  
+  - `GET /meals`: Retrieves all meals.  
+  - `GET /meals/<id>`: Retrieves a specific meal.  
+  - `PUT /meals/<id>`: Updates a specific meal.  
+  - `DELETE /meals/<id>`: Deletes a specific meal.  
 
-## Configurações Extras
+## Additional Configuration
 
-- **Porta:** A API roda na porta `5000` por padrão, mas pode ser alterada diretamente no código na linha `app.run(port=5000)`.  
-- **Modo Debug:** O modo `debug=True` está ativado, permitindo recarregar o servidor automaticamente ao modificar o código.  
+- **Port:** The API runs on port `5000` by default, but this can be changed directly in the code at the line `app.run(port=5000)`.  
+- **Debug Mode:** The `debug=True` mode is enabled, allowing the server to reload automatically when the code is modified.  
 
-## Melhorias Futuras
+## Challenges
 
-1. Adicionar persistência de dados utilizando um banco de dados (SQLite, PostgreSQL, etc.).  
-2. Implementar autenticação para proteger os endpoints.  
-3. Adicionar validações mais robustas para os dados enviados pelo cliente.  
-4. Criar uma interface web para facilitar o uso da API.  
+While developing this project, I faced the following challenges:  
+1. **Understanding Flask:** As a beginner, understanding how Flask handles routes and HTTP methods was challenging. I had to experiment and read documentation to properly configure the endpoints.  
+2. **Managing JSON Data:** Manipulating JSON data, especially when updating or deleting specific items, required careful indexing and iteration through the list.  
+3. **Debugging:** Some issues, such as incorrect data handling or forgetting to specify `Content-Type` in requests, caused errors that took time to resolve.  
+4. **Learning API Basics:** This was my first experience building an API, and I had to learn concepts like HTTP status codes, request methods (GET, PUT, DELETE), and how to handle client-server communication.  
+5. **Error Handling:** Adding error handling (e.g., handling invalid IDs) was something I initially overlooked, making the API prone to crashes with invalid input.  
 
-## Licença
+## License
 
-Este projeto é livre para uso e modificação.  
-```
+This project is free to use and modify.  
